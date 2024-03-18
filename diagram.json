@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "author": "Anugrah Damaris Hakim",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-mini", "id": "bb1", "top": -68.6, "left": 410.4, "attrs": {} },
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": -41.4,
+      "left": 126.2,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": 69.48,
+      "left": 4.5,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 83.2,
+      "left": 447.2,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "pir1:OUT", "uno:12", "green", [ "h38.4", "v96.14", "h249.6", "v-154.1" ] ],
+    [ "pir1:GND", "uno:GND.3", "black", [ "h0" ] ],
+    [ "pir1:VCC", "bb1:1b.j", "red", [ "h19.2", "v96", "h144", "v-163.2" ] ],
+    [ "lcd1:GND", "bb1:2b.i", "black", [ "h-9.6", "v-67.2" ] ],
+    [ "uno:GND.1", "bb1:1b.i", "black", [ "h28.8", "v9.9" ] ],
+    [ "bb1:2b.j", "lcd1:VCC", "red", [ "v0" ] ],
+    [ "lcd1:SDA", "uno:A4", "violet", [ "h-19.2", "v96.2", "h-288", "v-61.8" ] ],
+    [ "lcd1:SCL", "uno:A5", "blue", [ "h-9.6", "v96.3", "h-288", "v-61.9" ] ],
+    [ "uno:5V", "bb1:17b.j", "red", [ "h-28.7", "v-169", "h451.2", "v134.4" ] ]
+  ],
+  "dependencies": {}
+}
